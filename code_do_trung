@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="khoan" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <material name="green">
+        <color rgba="0 0.8 0 1" /> <!-- Brighter green -->
+    </material>
+
+    <material name="grey">
+        <color rgba="0.3 0.3 0.3 1" /> <!-- Darker grey -->
+    </material>
+
+    <link name="base_link"/>
+
+    <link name="de_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://my_robot_description/meshes/De.STL" scale = "0.001 0.001 0.001"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <material name="">
+                <color rgba="1 0 0 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="base_de_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="de_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <link name="than_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://my_robot_description/meshes/Than.STL" scale = "0.001 0.001 0.001"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <material name="">
+                <color rgba="0 0.7 0 0.3"/>
+            </material>
+
+        </visual>
+    </link>
+
+    <joint name="base_than_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="than_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+</robot>
